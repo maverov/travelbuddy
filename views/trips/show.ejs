@@ -1,0 +1,135 @@
+<!-- Navbar -->
+<div class="nav-bar">
+    <% include ../partials/header %>
+</div>
+
+<div class="container text-dark my-5">
+    <a class=" mt-3 btn btn-secondary" href="/trips"><i class="fa fa-arrow-left"></i> Go Back</a>
+
+    <div class="row d-flex">
+        <!-- Column 1 -->
+        <div class="col-md-9 pr-2">
+            <div class="d-flex justify-content-center my-3">
+                <img src="<%= trip.image %>" alt="Destination Photo" style="max-height: 500px; width: auto;">
+            </div>
+            <div class="card mb-3">
+                <div class="card-body">
+                    <h4 class="card-title my-2"><%= trip.destinationName %></h4>
+
+                    <p class="card-text">Leaving from <strong><%= trip.leavingFrom %></strong> on
+                        <em><%= trip.dates %></em></p>
+                    <p class="card-text "><strong>Description: <br></strong><%= trip.description %></p>
+                    <p class="card-text my-2"><small class="text-muted">This trip is submitted by <strong>
+                                <%= trip.author.username %>
+                            </strong></small>
+                    </p>
+
+                    <% if(currentUser && trip.author.id.equals(currentUser._id) || currentUser && currentUser.username === "admin") { %>
+                    <a href="/trips/<%= trip._id %>/edit" class="btn btn-success mt-2"><i class="fa fa-book"></i> Edit
+                        Trip</a>
+                    <form action="/trips/<%= trip._id %>?_method=DELETE" method="POST" class="d-inline">
+                        <button class="btn btn-danger mt-2">
+                            <i class="fa fa-trash"></i> Delete Trip</button>
+                    </form>
+                    <% } %>
+
+                </div>
+            </div>
+            <!-- =================================== -->
+            <div class="d-flex justify-content-center">
+                <h4 class="text-center mb-5 text-dark fancy-title my-4">COMMENTS</h4>
+            </div>
+
+            <div class="card card-body bg-light">
+                <p class="text-center">Get in touch with <%= trip.author.username %>!</p>
+                <div class="row mb-2 justify-content-end pr-2">
+
+                    <a href="/trips/<%= trip._id %>/comments/new" class="btn btn-sec text-white float-right"><i
+                            class="fa fa-comment"></i>
+                        Add New Comment</a>
+
+                </div>
+
+                <div class="mt-1">
+                    <hr>
+                    <!-- TravelBuddy Comment Section -->
+                    <% trip.comments.forEach(comment => { %>
+                    <div class="row mb-4">
+                        <div class="col-md-12">
+                            <strong><%= comment.author.username %></strong> wrote:
+                            <span class="float-right" style="font-size: 0.8rem;">Posted on
+                                <%= comment.created.toDateString() %></span>
+                            <p>
+                                <%= comment.text %>
+                            </p>
+                        </div>
+                    </div>
+                    <% }) %> </div>
+            </div>
+        </div>
+        <div class="sidebar col-md-3 justify-content-sm-center">
+            <a href="http://maverov.tech" target="_blank">
+                <img src="https://i.ibb.co/MBXyHRb/tshirt-add.png" alt="Advertisement" class="mb-4">
+            </a>
+            <p class="lead text-center" style="max-width: 100%;">TravelBuddy v1.0</p>
+
+
+            <div class="input-group mb-4">
+                <input type="text" class="form-control" placeholder="Search trips here..."
+                    aria-label="Recipient's username" aria-describedby="basic-addon2" style="height: 40px;">
+                <div class="input-group-append">
+                    <button class="btn btn-success" type="button"><i class="fa fa-search"></i>
+                        Search</button>
+                </div>
+            </div>
+
+            <div class="card mb-4">
+                <h5 class="card-header text-secondary" style="font-size: 0.8rem;">Dates (optional)
+                </h5>
+                <div class="card-body">
+
+                    <div class="input-group mb-3 flex justify-content-center" style="font-size: 0.8rem;">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="basic-addon1"><i class="fa fa-calendar"></i></span>
+                        </div>
+                        <input type="text" class="form-control" placeholder="From" aria-label="Username"
+                            aria-describedby="basic-addon1" style="height: 40px;">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="basic-addon1"><i class="fa fa-calendar"></i></span>
+                        </div>
+                        <input type="text" class="form-control" placeholder="To" aria-label="Username"
+                            aria-describedby="basic-addon1" style="height: 40px; font-size: 0.8rem;">
+                    </div>
+
+
+                    <a href="#" class="btn btn-sec text-white disabled"><i class="fa fa-search"></i>
+                        Search</a>
+                </div>
+            </div>
+
+
+            <div class="list-group" id="list-tab" role="tablist">
+                <a class="list-group-item list-group-item-action" id="list-home-list" data-toggle="list"
+                    href="#list-home" role="tab" aria-controls="home">FAQ</a>
+                <a class="list-group-item list-group-item-action" id="list-profile-list" data-toggle="list"
+                    href="#list-profile" role="tab" aria-controls="profile">Safety</a>
+                <a class="list-group-item list-group-item-action" id="list-messages-list" data-toggle="list"
+                    href="#list-messages" role="tab" aria-controls="messages">Find Tickets</a>
+                <a class="list-group-item list-group-item-action" id="list-settings-list" data-toggle="list"
+                    href="#list-settings" role="tab" aria-controls="settings">Find Hosts</a>
+            </div>
+
+            <div class="card mt-4" style="width: 100%;">
+                <div class="card-body">
+                    <h5 class="card-title">YOUR AD HERE</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">Advertise your website here</h6>
+                    <p class="card-text">Let us know if you want to advertise your website/business
+                        here.</p>
+                    <a href="mailto:maverov@gmail.com" class="card-link">Get in touch</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<% include ../partials/footer %>

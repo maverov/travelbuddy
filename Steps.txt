@@ -1,0 +1,26 @@
+step 1) setup project dir
+step 2) npm init => npm install express ejs nodemon body-parser
+step 3) setup express, app = express(), app.listen(port)
+step 4) Setup initial routes ("/", "/campgrounds")
+step 5) create campgrounds template and new folder called "views"
+step 6) Create header and footer partials
+step 7) Add Bootstrap
+step 8)
+step 9)
+step 10)
+step 11)
+step 12)
+step 13)
+step 14)
+step 15)
+step 16)
+step 17)
+step 18)
+step 19)
+step 20)
+step 21)
+step 22)
+step 23)
+step 24)
+step 25)
+

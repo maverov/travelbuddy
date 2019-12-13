@@ -1,0 +1,42 @@
+<!-- Navbar -->
+<div class="nav-bar mb-2">
+    <% include partials/header %>
+</div>
+
+<div class="container">
+    <a class="d-block mt-3 ml-3" href="/"><i class="fa fa-arrow-left"></i> Go Back</a>
+    <h2 class="text-center mb-5 text-dark fancy-title">Sign Up</h2>
+</div>
+
+
+
+<div class="container my-5 text-dark">
+    <form action="/register" method="POST" class="text-dark d-flex justify-content-center">
+        <div class="center-content" style="width: 40%;">
+            <div class="form-group">
+                <label class="text-dark" for="username">Username:</label>
+                <input type="text" class="form-control" name="username" autocomplete="off"
+                    placeholder="Enter your username...">
+            </div>
+            <div class="form-group">
+                <label class="text-dark" for="email">Email:</label>
+                <input type="email" class="form-control" name="email" autocomplete="off"
+                    placeholder="Enter a valid email address...">
+                <small id="emailHelp" class="form-text text-muted">You will never receive marketing emails.
+                </small>
+            </div>
+            <div class="form-group">
+                <label class="text-dark" for="username">Age:</label>
+                <input type="text" class="form-control" name="age" autocomplete="off" placeholder="Enter your age...">
+            </div>
+            <div class="form-group">
+                <label class="text-dark" for="password">Password:</label>
+                <input type="password" class="form-control" autocomplete="off" name="password"
+                    placeholder="Choose a password (min. 6 characters)...">
+            </div>
+            <input class="btn btn-success btn-lg text-uppercase" type="submit" value="Register">
+        </div>
+    </form>
+</div>
+
+<% include ./partials/footer %>

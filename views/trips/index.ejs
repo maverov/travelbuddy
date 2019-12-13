@@ -1,0 +1,79 @@
+<!-- Navbar -->
+<div class="nav-bar">
+  <% include ../partials/header %>
+</div>
+
+<div class="container">
+  <div class="jumbotron text-light">
+    <div class="container">
+      <h1>Explore travel opportunities</h1>
+      <p class="lead">View all the current trips posted by our members!</p>
+      <a href="/trips/new" class="py-2 btn btn-success btn-large"><i class="fa fa-plane"></i> ADD A NEW TRIP</a>
+    </div>
+  </div>
+</div>
+
+<div class="container text-dark mb-5">
+  <div class="row">
+    <div class="col-lg-12 mb-4 text-center py-3">
+      <h3 class="fancy-title">Current Planned Trips</h3>
+    </div>
+  </div>
+</div>
+
+
+<div class="row trips-section" style="display: flex; flex-wrap: wrap; flex-direction: row; font-size: 1rem;">
+  <div class="container text-dark mb-5 d-flex flex-row flex-wrap">
+    <% trips.forEach(trip => { %>
+    <div class="col-md-6 col-sm-12 mb-4">
+      <div class="img-thumbnail px-4" style="position: relative;">
+        <div class="row py-5">
+          <div class="col-sm-4 col-md-4 col-lg-4">
+            <img src="<%= trip.image %>" class="member-photo" alt="Photo of Destination" />
+          </div>
+          <div class="col-sm-8 col-md-8 col-lg-8">
+
+            <h4 class="mt-3 mb-4" style="font-size: 1.6rem;">
+              <%= trip.author.username %> <span style="font-size: 0.8rem; color: #eb1064;">(<%= trip.author.age %> years
+                old)</span>
+            </h4>
+
+            <ul style="list-style: none;">
+              <li>
+                <h5
+                  style="color: #eb1064; text-shadow: 2px 2px 5px #17a171 !important; font-family: 'Permanent Marker', cursive; font-size: 1.6rem">
+                  <i class="fa fa-plane"></i> I am travelling to:</h5>
+                <p style="font-weight: 400;">
+                  <%= trip.destinationName %>
+                </p>
+              </li>
+              <li>
+                <i class="fa fa-globe"></i> From: <%= trip.leavingFrom %>
+              </li>
+              <li><i class="fa fa-calendar"></i> Dates: <%= trip.dates %></li>
+              <li>
+                <i class="fa fa-info-circle"></i> Description: <%= trip.description.substring(0,300) %>...
+              </li>
+            </ul>
+
+            <div class="buttons mt-4">
+              <a href="/trips/<%= trip.id %>" class="btn btn-success btn-sm text-uppercase p-2 mr-2"> <i
+                  class="fa fa-eye text-white"></i> More
+                Info</a>
+              <a href="/trips/<%= trip.id %>" class="btn btn-sec text-white btn-sm text-uppercase p-2 disabled"> <i
+                  class="fa fa-envelope text-white"></i> Contact</a>
+            </div>
+
+          </div>
+        </div>
+
+
+      </div>
+    </div>
+    <% }); %>
+
+
+  </div>
+</div>
+
+<% include ../partials/footer %>

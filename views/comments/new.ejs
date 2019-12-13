@@ -1,0 +1,30 @@
+<!-- Navbar -->
+<div class="nav-bar">
+    <% include ../partials/header %>
+</div>
+
+<!-- MAIN CONTENT -->
+<div class="container my-5" style="font-size: 0.8rem;">
+    <div class="center-content">
+        <h2 class="text-center mb-5 text-dark fancy-title">Add a New Comment to <%= trip.destinationName %></h2>
+        <div class="my-3" style="width: 60%; margin: 20px auto;">
+            <form action="/trips/<%= trip._id %>/comments" method="POST">
+                <div class="form-group mb-4">
+                    <label for="name" class="text-dark">Your comment:</label>
+                    <textarea name="comment[text]" class="form-control" rows="5"
+                        placeholder="Type in your comment here..." maxlength="600" required></textarea>
+                </div>
+                <button class="mt-2 btn btn-success btn-block">Submit</button>
+            </form>
+            <a class="d-block mt-3" href="/trips/<%= trip._id %>"><i class="fa fa-arrow-left"></i> Go Back</a>
+        </div>
+
+    </div>
+</div>
+
+<br><br>
+<!-- END OF MAIN CONTENT -->
+
+<!-- Footer -->
+<div class="mt-4"></div>
+<% include ../partials/footer %>
