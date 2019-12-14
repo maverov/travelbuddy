@@ -46,7 +46,7 @@ app.use(commentRoutes);
 app.use(tripRoutes);
 
 // Server listening setup
-app.listen("3000", () => {
+app.listen(process.env.PORT, process.env.IP, () => {
     console.log("*****************************************************************");
     console.log("*********  T R A V E L    B U D D Y    has     started  *********");
     console.log("The Server is listening on port 3000.");
