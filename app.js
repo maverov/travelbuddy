@@ -52,5 +52,3 @@ app.listen(process.env.PORT, process.env.IP, () => {
     console.log("The Server is listening on port 3000.");
     console.log("*****************************************************************");
 });
-
-//         image: "https://i.ebayimg.com/images/g/e9oAAOSwmcFbyTjA/s-l300.jpg",
