@@ -1,14 +1,12 @@
 # TravelBuddy
 
-<img width="1096" alt="screen shot 2018-10-26 at 9 56 34 pm" src="https://user-images.githubusercontent.com/41349472/47598483-35f7e780-d96a-11e8-98e3-53f2c6bdf20b.png">
+<img width="1098" alt="screen shot 2018-10-26 at 9 59 59 pm" src="https://i.ibb.co/wcmVJcF/screencapture-tbuddy-app-herokuapp-2019-12-14-09-33-03.png">
 
 ## Live Demo
 
 To see the app in action, go to [https://tbuddy-app.herokuapp.com/](https://tbuddy-app.herokuapp.com/)
 
 ## Features
-
-<img width="1098" alt="screen shot 2018-10-26 at 9 59 59 pm" src="https://i.ibb.co/wcmVJcF/screencapture-tbuddy-app-herokuapp-2019-12-14-09-33-03.png">
 
 * Authentication:
   
