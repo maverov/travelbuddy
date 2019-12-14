@@ -13,7 +13,8 @@ const indexRoutes = require("./routes/index");
 const methodOverride = require("method-override");
 const flash = require("connect-flash");
 
-mongoose.connect("mongodb://localhost/travel_buddy", { useNewUrlParser: true, useUnifiedTopology: true });
+// mongoose.connect("mongodb://localhost/travel_buddy", { useNewUrlParser: true, useUnifiedTopology: true });
+mongoose.connect("mongodb+srv://admin:carebear@cluster0-wftyd.mongodb.net/test?retryWrites=true&w=majority", { useNewUrlParser: true, useUnifiedTopology: true });
 // Telling Express to use the Body-Parser package
 app.use(bodyParser.urlencoded({ extended: true }));
 // Setting view engine to EJS default
